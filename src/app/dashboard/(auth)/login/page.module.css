@@ -5,11 +5,11 @@
   gap: 20px;
 }
 
-.title{
+.title {
   color: #bbb;
 }
 
-.subtitle{
+.subtitle {
   font-size: 20px;
   margin-bottom: 30px;
   color: #bbb;
@@ -61,8 +61,16 @@
   color: rgb(61, 61, 61);
 }
 
-.google {
-  background-color: rgba(228, 97, 50, 0.72);
+.credentials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .google:hover {

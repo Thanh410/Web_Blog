@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 import { getProviders, signIn, useSession } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 const Login = ({ url }) => {
   const session = useSession();
@@ -57,26 +58,32 @@ const Login = ({ url }) => {
         <button className={styles.button}>Login</button>
         {error && error}
       </form>
-      <button
-        onClick={() => {
-          signIn("google");
-        }}
-        className={styles.button + " " + styles.google}
-      >
-        Login with Google
-      </button>
+      <div className={styles.credentials}>
+        {/* Google */}
+        <Image
+          onClick={() => {
+            signIn("google");
+          }}
+          width={30}
+          height={30}
+          className={styles.icon}
+          src="https://th.bing.com/th/id/R.2991eba27a990a1c9eb56d9633343020?rik=gzbdRDysD7sQSA&pid=ImgRaw&r=0"
+        ></Image>
+        {/* Github */}
+        <Image
+          onClick={() => {
+            signIn("github");
+          }}
+          width={30}
+          height={30}
+          className={styles.icon}
+          src="https://th.bing.com/th/id/OIP.8SVgggxQcO5L6Dw_61ac4QAAAA?pid=ImgDet&rs=1"
+        ></Image>
+      </div>
       <span className={styles.or}>- OR -</span>
       <Link className={styles.link} href="/dashboard/register">
         Create new account
       </Link>
-      {/* <button
-        onClick={() => {
-          signIn("github");
-        }}
-        className={styles.button + " " + styles.github}
-      >
-        Login with Github
-      </button> */}
     </div>
   );
 };

@@ -54,9 +54,13 @@ const Navbar = () => {
             {link.title}
           </Link>
         ))}
-        {session.status === "authenticated" && (
+        {session.status === "authenticated" ? (
           <button className={styles.logout} onClick={signOut}>
             Logout
+          </button>
+        ) : (
+          <button className={styles.logout} onClick={signOut}>
+            <Link href={"/dashboard/login"}>Login</Link>
           </button>
         )}
       </div>
